@@ -1,14 +1,16 @@
-# Welcome to your Lovable project
+# Délice Maison Revamp
+
+Reprend ce projet https://github.com/hassan0309oy/d-lice-maison-showcase.git et fait ça : Je t'explique. On va revisiter le style de notre site web. Bien sûr, on va garder les mêmes liens qui sont vers les produits et les mêmes éléments, même les images. Les images produits et même les vidéos. On va tout garder pareil. Voilà à quoi ça doit ressembler. La personne rentre, elle voit au début, je t'ai mis une image de plusieurs captures d'écran de tout notre site. Du coup, elle rentre, elle voit tout pareil. Les « no pack » sont là, toujours pareil. En gros, la première image, c'est l'image à quoi va ressembler notre site en défilant. Du coup, à gauche, c'est le début, au milieu, c'est le milieu du site et à droite, c'est la fin. Sauf qu'à la fin, on n'aura pas de bouton TikTok, Instagram, YouTube, tout ça. Mais on aura quand même la langue du site. Et on pourra sélectionner la langue. Du coup, lorsqu'on clique, ça, il faut bien que tu le comprennes, lorsque la personne a un navigateur anglophone, le truc vient en français et les liens des packs sont sur le pack... Sur les packs français, francophones, et lorsqu'il est anglais, c'est vers les packs anglophones. Les avis clients, bien sûr, tu inventes toujours des avis clients toujours plus positifs et avec des photos de profil toujours. Plus réalistes. Et bien sûr, à chaque fois, on va afficher trois avis, comme tu vois là. Offre spéciale Black Friday. Donc, dès que la personne rentre sur le site, qu'elle soit française ou anglaise, elle a la deuxième image que je t'ai affichée. Du coup, la deuxième image qui s'est affichée, c'est le message qui va s'afficher : « Offre spéciale Black Friday ». Avec une petite croix en haut. Elle pourra cliquer sur la croix pour « swipper » le message et rester sur le site. L'offre spéciale Black Friday, moins 40 %, et en haut, tu as le style du minuteur. Je veux exactement ce minuteur-là. C'est ce minuteur qui va rester là. Tout le long du site. Sauf que quand elle va appuyer sur les boutons des pages produits, elle va aller sur Bitcoin, là, il n'y aura plus le compteur. Mais dès qu'elle est sur le site, il y aura toujours ce compteur. C'est sous cette forme-là qu'il y aura le compteur. Bien sûr, il sera toujours sous forme d'animation. Même le message quand il va s'afficher, ça ne sera pas statique, ça sera sous forme d'animation. Une animation de... Quatre secondes, tu vois ? Tu vas animer le truc. Voilà. Et après, ça va devenir statique, elle pourra quitter. Donc, voilà. Et selon le style du minuteur et le style du message, tu vas me créer une étiquette « moins 40 % ». Black Friday que tu vas coller sur les packs de 40 et de 60 recettes, que ça soit pour la version anglophone ou francophone. C'est comme ça. Donc voilà. Exactement à quoi doit ressembler le site. Parfaitement, il doit ressembler à ça, exactement. Et le style du menuiteur et l'offre, ça doit être parfaitement ça. Donc, on change le style. Et oui, la FAQ, c'est ces mêmes questions-là que je veux avoir. Et tu dois rajouter d'autres questions essentielles, fondamentales et stratégiques. OK, partout à même. Je veux exactement les mêmes images et même tout. Il faut que ce soit copié-collé de ces images-là. Bien sûr. Voilà. Il faut que ce soit parfait. Et nos recettes en vidéo. La partie « Nos recettes en vidéo », comme tu vois en bas. Ce sont nos vidéos qui sont déjà dans nos dépôts, les vidéos que j'ai. Ce sont ces vidéos qui vont défiler là. Et en bas, il y a « Offrez le plaisir de cuisiner ». Quand on appuie là-bas, ça nous remonte vers les e-books. C'est exactement les mêmes trucs que je veux avoir. Je veux aussi avoir le cadeau quand on arrive au niveau là-bas. Je veux avoir le cadeau qui s'anime. Après, quand on arrive en bas, des recettes, nos recettes en vidéo, on a « Offrez le plaisir de cuisiner ». Quand on swipe, on vient sur les avis. C'est... Là, la suite de l'autre. On va sur des avis, après on swipe. Après la FAQ, on tombe sur « Offre spéciale Black Friday. Découvrez maintenant ». Bien sûr, offre spéciale Black Friday, il y aura « Profitez de 40 % ». Je veux exactement tout ça, mais le minuteur qu'il y a à la base, ça sera des heures. Ce sera les heures, les minutes et les secondes. Après « Découvrez maintenant », ça nous amène directement vers les packs. Je veux exactement ça. Tu as compris ou pas ? Du coup, voilà, fais-moi un truc propre, très propre.
 
 This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/6ac9171a-ceb8-43b7-8ae9-9c2b9486179f).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +22,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
