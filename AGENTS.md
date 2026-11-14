@@ -28,3 +28,5 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+- Language is chosen only from the browser (Accept-Language on the server, navigator.language on the client) via a redirect from `/`; no manual switcher or stored preference — avoids a flash screen and keeps one rule.
