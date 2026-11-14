@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "@tanstack/react-router";
 import { Zap, ShieldCheck, Search, Heart, ChevronDown, ArrowRight, ArrowUp, Star, Gift, CircleHelp, PlayCircle, ChefHat, ClipboardCheck, Mail, Smartphone, Headphones, Plus, BookOpen } from "lucide-react";
 import hero from "@/assets/hero-plate-ref.jpg";
 import bookFr from "@/assets/preview-book-fr.jpg";
