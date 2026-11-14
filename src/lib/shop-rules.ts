@@ -6,7 +6,7 @@ export const BLACK_FRIDAY_END = BLACK_FRIDAY_START + 48 * 60 * 60 * 1000;
 export const BLACK_FRIDAY_DISCOUNT = 0.4;
 
 export function browserLanguage(language: string): ShopLanguage {
-  return language.toLowerCase().split(/[-_]/)[0] === "fr" ? "fr" : "en";
+  return language.toLowerCase().trim().split(/[-_,;\s]/)[0] === "fr" ? "fr" : "en";
 }
 
 export function promotionActive(now: number): boolean {

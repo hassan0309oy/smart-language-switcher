@@ -4,7 +4,7 @@ import { Zap, ShieldCheck, Search, Heart, ChevronDown, ArrowRight, ArrowUp, Star
 import hero from "@/assets/hero-plate-ref.jpg";
 import bookFr from "@/assets/preview-book-fr.jpg";
 import bookEn from "@/assets/preview-book-en.jpg";
-import { LANG_KEY, LOGO_URL, PACKS, TESTIMONIALS, VIDEOS, type Lang } from "@/config/site";
+import { LOGO_URL, PACKS, TESTIMONIALS, VIDEOS, type Lang } from "@/config/site";
 import { FinalOffer, OfferModal, PackLabel, TimerBar, gift } from "@/components/BlackFriday";
 import { money, packPrice, promotionActive } from "@/lib/shop-rules";
 
@@ -70,30 +70,6 @@ function useReveal() {
     return () => io.disconnect();
   }, []);
   return ref;
-}
-
-const saveLang = (l: Lang) => { try { localStorage.setItem(LANG_KEY, l); } catch { /* optional */ } };
-
-function LangSelect({ lang, dark = false }: { lang: Lang; dark?: boolean }) {
-  const [open, setOpen] = useState(false);
-  const opts: { l: Lang; flag: string; label: string }[] = [{ l: "fr", flag: "🇫🇷", label: "Français" }, { l: "en", flag: "🇬🇧", label: "English" }];
-  const cur = opts.find(o => o.l === lang)!;
-  return (
-    <div className="relative">
-      <button onClick={() => setOpen(o => !o)} aria-expanded={open} aria-label="Language" className={`flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-bold shadow-soft ${dark ? "bg-cream/10 text-cream ring-1 ring-cream/20" : "bg-card text-cocoa ring-1 ring-border"}`}>
-        <span className="emoji">{cur.flag}</span>{dark ? cur.label : cur.l.toUpperCase()}<ChevronDown className="h-3.5 w-3.5" />
-      </button>
-      {open && (
-        <div className={`absolute right-0 z-50 mt-2 w-36 overflow-hidden rounded-xl bg-card shadow-cover ring-1 ring-border ${dark ? "bottom-full mb-2 left-1/2 -translate-x-1/2 right-auto" : ""}`}>
-          {opts.map(o => (
-            <Link key={o.l} to={o.l === "fr" ? "/fr" : "/en"} onClick={() => { saveLang(o.l); setOpen(false); }} className={`flex items-center gap-2 px-3 py-2 text-sm font-bold text-cocoa hover:bg-secondary ${o.l === lang ? "bg-secondary" : ""}`}>
-              <span className="emoji">{o.flag}</span>{o.label}
-            </Link>
-          ))}
-        </div>
-      )}
-    </div>
-  );
 }
 
 function Title({ icon: I, children, sub }: { icon: typeof Heart; children: string; sub: string }) {
@@ -179,7 +155,6 @@ export function Shop({ lang }: { lang: Lang }) {
           </a>
           <nav className="flex items-center gap-2.5 text-[0.7rem] font-bold text-cocoa sm:gap-5 sm:text-sm">
             {x.nav.map((n, i) => <a key={n} href={navIds[i]} className="hover:text-accent">{n}</a>)}
-            <LangSelect lang={lang} />
           </nav>
         </header>
         <div className="relative mx-auto max-w-6xl px-5 pt-16 md:pt-24">
@@ -321,7 +296,6 @@ export function Shop({ lang }: { lang: Lang }) {
         <nav className="flex items-center justify-center gap-3 text-sm font-semibold">
           {x.nav.map((n, i) => <span key={n} className="flex items-center gap-3">{i > 0 && <span className="text-cream/40">|</span>}<a href={navIds[i]} className="hover:text-sun">{n}</a></span>)}
         </nav>
-        <div className="mt-6 flex justify-center"><LangSelect lang={lang} dark /></div>
         <p className="mt-6 text-xs text-cream/70">© {new Date().getFullYear()} Délices Maison. {x.rights}</p>
         <a href="#top" aria-label={x.top} className="absolute bottom-6 right-5 grid h-11 w-11 place-items-center rounded-full bg-cream/15 ring-1 ring-cream/30 hover:bg-cream/25"><ArrowUp className="h-5 w-5" /></a>
       </footer>

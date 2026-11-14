@@ -27,7 +27,6 @@ const c60fr = { url: "/media/cover-60-fr.png" };
 const c60en = { url: "/media/cover-60-en.png" };
 
 export type Lang = "fr" | "en";
-export const LANG_KEY = "delices-maison-lang";
 export const LOGO_URL = logo;
 
 export type Pack = {

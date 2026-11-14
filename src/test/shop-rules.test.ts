@@ -14,7 +14,8 @@ describe("Shop rules", () => {
     expect(packPrice(22.99, 60, BLACK_FRIDAY_END)).toBe(22.99);
   });
   it("uses French for French browsers", () => { expect(browserLanguage("fr-FR")).toBe("fr"); expect(browserLanguage("fr-CA")).toBe("fr"); });
-  it("uses English for other browsers", () => { expect(browserLanguage("en-GB")).toBe("en"); expect(browserLanguage("de-DE")).toBe("en"); });
+  it("uses English for other browsers", () => { expect(browserLanguage("en-GB")).toBe("en"); expect(browserLanguage("de-DE")).toBe("en"); expect(browserLanguage("es-ES,es;q=0.9")).toBe("en"); expect(browserLanguage("it")).toBe("en"); });
+  it("reads French from a browser language header", () => expect(browserLanguage("fr,en;q=0.8")).toBe("fr"));
   it("gives the 60 pack the lowest unit price", () => {
     const prices = PACKS.map(p => packPrice(p.basePrice, p.count, BLACK_FRIDAY_START) / p.count);
     expect(prices[2]).toBeLessThan(prices[0] ?? 0);
