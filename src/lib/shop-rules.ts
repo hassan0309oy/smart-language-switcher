@@ -1,8 +1,8 @@
 export type ShopLanguage = "fr" | "en";
 
 // One shared campaign window; never restart urgency for an individual visitor.
-// Starts Nov 15 2026 at 00:00 Paris time (CET, UTC+1) and runs 72 hours.
-export const BLACK_FRIDAY_START = Date.parse("2026-11-14T23:00:00Z");
+// Restarted Nov 18 2026 at 20:00 Paris time (CET, UTC+1) and runs 72 hours.
+export const BLACK_FRIDAY_START = Date.parse("2026-11-18T19:00:00Z");
 export const BLACK_FRIDAY_END = BLACK_FRIDAY_START + 72 * 60 * 60 * 1000;
 export const BLACK_FRIDAY_DISCOUNT = 0.4;
 

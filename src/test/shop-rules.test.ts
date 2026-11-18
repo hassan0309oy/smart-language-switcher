@@ -8,7 +8,8 @@ describe("Shop rules", () => {
   it("does not discount the 20 pack", () => expect(packPrice(11, 20, BLACK_FRIDAY_START)).toBe(11));
   it("sells the 20 pack at 11 dollars", () => expect(PACKS[0]?.basePrice).toBe(11));
   it("runs for exactly 72 hours for everyone", () => expect(BLACK_FRIDAY_END - BLACK_FRIDAY_START).toBe(72 * 60 * 60 * 1000));
-  it("starts on November 15 2026 at midnight Paris time", () => expect(BLACK_FRIDAY_START).toBe(Date.parse("2026-11-14T23:00:00Z")));
+  it("restarts on November 18 2026 at 20:00 Paris time", () => expect(BLACK_FRIDAY_START).toBe(Date.parse("2026-11-18T19:00:00Z")));
+  it("ends on November 21 2026 at 20:00 Paris time", () => expect(BLACK_FRIDAY_END).toBe(Date.parse("2026-11-21T19:00:00Z")));
   it("ends without restarting or negative time", () => {
     expect(promotionActive(BLACK_FRIDAY_END)).toBe(false);
     expect(countdown(BLACK_FRIDAY_END + 10000)).toEqual(["00", "00", "00"]);
