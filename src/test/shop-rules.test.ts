@@ -1,15 +1,21 @@
 import { describe, expect, it } from "vitest";
 import { PACKS } from "@/config/site";
-import { BLACK_FRIDAY_START, BLACK_FRIDAY_END, browserLanguage, countdown, packPrice, promotionActive } from "@/lib/shop-rules";
+import { BLACK_FRIDAY_START, BLACK_FRIDAY_END, CYCLE_MS, browserLanguage, countdown, packPrice, promotionActive } from "@/lib/shop-rules";
 
 describe("Shop rules", () => {
   it("discounts the 40 pack by 40 percent", () => expect(packPrice(19.85, 40, BLACK_FRIDAY_START)).toBe(11.91));
   it("discounts the 60 pack by 40 percent", () => expect(packPrice(22.99, 60, BLACK_FRIDAY_START)).toBe(13.79));
   it("does not discount the 20 pack", () => expect(packPrice(11, 20, BLACK_FRIDAY_START)).toBe(11));
   it("sells the 20 pack at 11 dollars", () => expect(PACKS[0]?.basePrice).toBe(11));
-  it("runs for exactly 72 hours for everyone", () => expect(BLACK_FRIDAY_END - BLACK_FRIDAY_START).toBe(72 * 60 * 60 * 1000));
+  it("uses a 72 hour timer cycle", () => expect(CYCLE_MS).toBe(72 * 60 * 60 * 1000));
+  it("restarts the timer at 72 hours when a cycle ends", () => {
+    expect(countdown(BLACK_FRIDAY_START + CYCLE_MS)).toEqual(["72", "00", "00"]);
+    expect(promotionActive(BLACK_FRIDAY_START + CYCLE_MS)).toBe(true);
+    expect(countdown(Date.parse("2026-11-21T20:00:00Z"))).toEqual(["71", "00", "00"]);
+  });
+  it("cuts the last cycle at the general end", () => expect(countdown(Date.parse("2026-11-30T19:00:00Z"))).toEqual(["04", "00", "00"]));
   it("restarts on November 18 2026 at 20:00 Paris time", () => expect(BLACK_FRIDAY_START).toBe(Date.parse("2026-11-18T19:00:00Z")));
-  it("ends on November 21 2026 at 20:00 Paris time", () => expect(BLACK_FRIDAY_END).toBe(Date.parse("2026-11-21T19:00:00Z")));
+  it("ends on November 30 2026 at midnight Paris time", () => expect(BLACK_FRIDAY_END).toBe(Date.parse("2026-11-30T23:00:00Z")));
   it("ends without restarting or negative time", () => {
     expect(promotionActive(BLACK_FRIDAY_END)).toBe(false);
     expect(countdown(BLACK_FRIDAY_END + 10000)).toEqual(["00", "00", "00"]);
